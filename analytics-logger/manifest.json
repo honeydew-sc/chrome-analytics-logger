@@ -1,0 +1,19 @@
+{
+    "name": "Analytics Logger",
+    "version": "0.0.1",
+    "description": "Persist analytics network requests to local storage",
+    "permissions": [
+        "webRequest",
+        "*://*/*"
+    ],
+    "background": {
+        "scripts": ["background.js"]
+    },
+    "content_scripts": [
+        {
+            "matches": ["*://*/*"],
+            "js": ["content.js"],
+            "run_at": "document_end"
+        }],
+    "manifest_version": 2
+}
